@@ -1,0 +1,9 @@
+@use './_colors' as *;
+@use './_mixins' as *;
+
+@mixin large {
+	@media (min-width: 992px) {
+	}
+	@media (min-width: 1100px) {
+	}
+}

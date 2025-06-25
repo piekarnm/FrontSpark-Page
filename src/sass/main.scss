@@ -1,0 +1,29 @@
+@use './_reset';
+@use './_colors' as *;
+@use './_animations';
+@use './_small' as *;
+@use './_medium' as *;
+@use './_large' as *;
+@use './_mixins' as *;
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Raleway, sans-serif;
+	background-color: #000;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+}
+
+// tutaj nowy kod ;)
+
+@include small;
+@include medium;
+@include large;
