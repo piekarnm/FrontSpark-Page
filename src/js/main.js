@@ -1,6 +1,6 @@
 const burgerBtn = document.querySelector('.hamburger')
-const navMobile = document.querySelector('.nav--mobile')
-const allNavItems = document.querySelectorAll('.nav--mobile__content__links__link')
+const navMobile = document.querySelector('.nav-mobile')
+const allNavItems = document.querySelectorAll('.nav-mobile__link')
 const navLogo = document.querySelector('.company')
 // const footerYear = document.querySelector('.footer-year')
 // const allSections = document.querySelectorAll('.section')
@@ -28,19 +28,19 @@ const navLogo = document.querySelector('.company')
 
 const openNav = () => {
 	let delayTime = 0
-	navMobile.classList.add('nav--mobile--active')
+	navMobile.classList.add('nav-mobile--active')
 	allNavItems.forEach(item => item.classList.add('nav-link-animation'))
 	burgerBtn.classList.add('hamburger-open')
 }
 
 const closeNav = () => {
-	navMobile.classList.remove('nav--mobile--active')
+	navMobile.classList.remove('nav-mobile--active')
 	allNavItems.forEach(item => item.classList.remove('nav-link-animation'))
 	burgerBtn.classList.remove('hamburger-open')
 }
 
 const toggleNav = () => {
-	if (navMobile.classList.contains('nav--mobile--active')) {
+	if (navMobile.classList.contains('nav-mobile--active')) {
 		closeNav()
 	} else {
 		openNav()
