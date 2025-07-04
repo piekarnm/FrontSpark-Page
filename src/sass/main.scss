@@ -5,6 +5,7 @@
 @use './_medium' as *;
 @use './_large' as *;
 @use './_mixins' as *;
+@use './_hamburger' as *;
 
 html {
 	font-size: 62.5%;
@@ -12,7 +13,7 @@ html {
 }
 
 body {
-	font-family: Raleway, sans-serif;
+	font-family: Inter, sans-serif;
 	background-color: #000;
 }
 
@@ -20,6 +21,173 @@ body {
 	margin: 0 auto;
 	max-width: 1200px;
 	width: 100%;
+}
+
+.DesktopHeader {
+	display: none;
+}
+
+// DESKTOP NAV
+.nav--desktop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 64px;
+	padding: 16px 24px;
+	border-bottom: 1px solid $StrokeNav;
+	background: $MainNavigationColor;
+	backdrop-filter: blur(6px);
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		&__company {
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 8px;
+			&__logo {
+				width: 32px;
+				height: 32px;
+			}
+			&__name {
+				font-size: 24px;
+				font-style: normal;
+				font-weight: 700;
+				background: $main-company-name-navigation;
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+		&__links {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			color: white;
+			font-size: 1.4rem;
+			font-style: normal;
+			font-weight: 400;
+			&__link {
+				color: inherit;
+				text-decoration: none;
+				cursor: pointer;
+				transition: color 0.3s ease;
+
+				&:visited,
+				&:active {
+					color: inherit;
+					text-decoration: none;
+				}
+				&:hover {
+					color: $purple;
+				}
+				&--blue:hover {
+					color: $blue;
+				}
+				&--green:hover {
+					color: $green;
+				}
+				&--yellow:hover {
+					color: $yellow;
+				}
+			}
+		}
+	}
+}
+
+// MOBILE NAV
+.header-nav-bg {
+	z-index: 400;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 63px;
+	background: $MainNavigationColor;
+}
+.company {
+	z-index: 500;
+	position: fixed;
+	top: 0em;
+	left: 0em;
+	padding: 16px 24px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	&__logo {
+		width: 32px;
+		height: 32px;
+	}
+	&__name {
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		background: $main-company-name-navigation;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+.nav--mobile {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	// height: 64px;
+	padding: 16px 24px;
+	border-bottom: 1px solid $StrokeNav;
+	background: $MainNavigationColor;
+	backdrop-filter: blur(6px);
+	transform: translateY(-88%);
+	transition: all 0.3s;
+	&--active {
+		transform: translateY(0);
+	}
+	&__content {
+		margin-top: 60px;
+		&__links {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			gap: 18px;
+			color: $gray;
+			font-size: 1.8rem;
+			font-style: normal;
+			font-weight: normal;
+			.nav-link-animation {
+				animation: navLinkAnimation 1s;
+			}
+
+			&__link {
+				text-transform: uppercase;
+				padding: 22px;
+				color: inherit;
+				text-decoration: none;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				&:last-child {
+					margin-bottom: 60px;
+				}
+				&:visited,
+				&:active {
+					color: inherit;
+					text-decoration: none;
+				}
+				&:hover {
+					transform: scale(1.2);
+					font-weight: bold;
+				}
+			}
+		}
+	}
 }
 
 // tutaj nowy kod ;)

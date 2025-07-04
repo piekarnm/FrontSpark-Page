@@ -1,0 +1,87 @@
+@use './_colors' as *;
+
+.hamburger-black-bars {
+	.hamburger-inner,
+	.hamburger-inner::before,
+	.hamburger-inner::after {
+		background-color: $gray;
+	}
+}
+
+.hamburger {
+	position: fixed;
+	top: 3em;
+	right: 1em;
+	padding: 15px 15px;
+	display: inline-block;
+	cursor: pointer;
+	transform: translateY(-50%);
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+	z-index: 500;
+
+	&-inner,
+	&-inner::before,
+	&-inner::after {
+		background-color: $gray;
+		z-index: 500;
+	}
+}
+
+.hamburger-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	width: 40px;
+	height: 4px;
+	background-color: $gray;
+	border-radius: 4px;
+	position: absolute;
+	transition: 0.3s;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+	content: '';
+	display: block;
+}
+.hamburger-inner::before {
+	top: -10px;
+}
+.hamburger-inner::after {
+	bottom: -10px;
+}
+
+.hamburger-open {
+	.hamburger-inner {
+		background-color: $gray;
+		opacity: 1;
+		transform: rotateZ(45deg);
+	}
+	.hamburger-inner::before {
+		background-color: $gray;
+		opacity: 1;
+		transform: rotateZ(-90deg);
+		top: 0.5px;
+	}
+	.hamburger-inner::after {
+		background-color: $gray;
+		opacity: 0;
+		bottom: 0px;
+	}
+}

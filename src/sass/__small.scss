@@ -2,6 +2,13 @@
 	@media (min-width: 576px) {
 	}
 	@media (min-width: 645px) {
+		.DesktopHeader {
+			display: block;
+		}
+
+		.MobileHeader {
+			display: none;
+		}
 	}
 	@media (min-width: 437px) {
 	}
