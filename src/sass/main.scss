@@ -192,7 +192,96 @@ body {
 	}
 }
 
-// tutaj nowy kod ;)
+// SECTIONS
+.section {
+}
+
+// HERO SECTION
+.hero-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $hero-section-gradient;
+	width: 100%;
+	height: 100vh;
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 36px;
+	}
+	&__icon {
+		width: 80px;
+		height: 80px;
+		animation: bolt-bounce 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+	&__title {
+		text-align: center;
+		font-size: 96px;
+		font-style: normal;
+		font-weight: 700;
+		background: $main-company-name;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+	&__subtitle {
+		color: $gray;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 400;
+		span {
+			color: $yellow;
+		}
+	}
+	&__buttons {
+		display: flex;
+		padding: 10px 0px;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+	}
+	&__projects-btn {
+		display: flex;
+		padding: 12px 32px;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		border-radius: 15px;
+		background: linear-gradient(90deg, #9810fa 0%, #2563eb 100%);
+		color: #fff;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 700;
+		transition: background 0.3s, box-shadow 0.3s;
+
+		&:hover {
+			background: linear-gradient(90deg, #9b71e4 0%, #4e70ce 100%);
+			box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, 0.3) inset;
+		}
+	}
+
+	&__contact-btn {
+		display: flex;
+		padding: 12px 32px;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		border-radius: 15px;
+		background: $yellow;
+		color: $black;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 700;
+		transition: background 0.3s, box-shadow 0.3s;
+		&:hover {
+			background: #ffda47;
+			box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, 0.3) inset;
+		}
+	}
+}
 
 @include small;
 @include medium;
