@@ -3,6 +3,12 @@
 
 @mixin large {
 	@media (min-width: 992px) {
+		.tech-section {
+			&__cards {
+				grid-template-rows: repeat(3, minmax(0, 1fr));
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+		}
 	}
 	@media (min-width: 1100px) {
 	}

@@ -2,6 +2,13 @@
 	@media (min-width: 576px) {
 	}
 	@media (min-width: 645px) {
+		.tech-section {
+			&__cards {
+				grid-template-rows: repeat(2, minmax(0, 1fr));
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+		}
+
 		.desktop-header {
 			display: block;
 		}

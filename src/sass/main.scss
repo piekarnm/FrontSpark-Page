@@ -289,17 +289,16 @@ body {
 
 // ABOUT SECTION
 .about-section {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
 	background: linear-gradient(90deg, rgba(89, 22, 139, 0.1) 0%, rgba(28, 57, 142, 0.1) 100%);
-	height: 500px;
 	&__content {
 		display: flex;
-		height: 400px;
-		padding: 0px 30px;
+		padding: 50px 30px;
 		flex-direction: column;
 		align-items: center;
 		gap: 48px;
@@ -312,7 +311,7 @@ body {
 	}
 	&__title {
 		color: #fff;
-		font-size: 48px;
+		font-size: clamp(4rem, 10vw, 4.8rem);
 		font-style: normal;
 		font-weight: 700;
 		span {
@@ -342,6 +341,117 @@ body {
 			font-size: 18px;
 			font-style: normal;
 			font-weight: 400;
+		}
+	}
+}
+
+// TECH-SECTION
+.tech-section {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	background: linear-gradient(90deg, rgba(20, 83, 45, 0.1) 0%, rgba(30, 58, 138, 0.1) 100%);
+	&__content {
+		display: flex;
+		padding: 50px 15px;
+		flex-direction: column;
+		align-items: center;
+		gap: 48px;
+	}
+	&__head {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+	}
+	&__title {
+		color: #fff;
+		font-size: clamp(4rem, 10vw, 4.8rem);
+		font-style: normal;
+		font-weight: 700;
+		span {
+			color: $yellow;
+		}
+	}
+
+	&__cards {
+		display: grid;
+		row-gap: 20px;
+		column-gap: 20px;
+		grid-template-rows: repeat(1, minmax(0, 1fr));
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+	&__card {
+		cursor: pointer;
+		display: flex;
+		width: 300px;
+		padding: 24px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		justify-self: center;
+		border-radius: 15px;
+		border: 1px solid $CardStroke;
+		background: rgba(17, 24, 39, 0.5);
+		transition: scale 0.3s, border-color 0.3s;
+		&:hover {
+			scale: 1.05;
+			border-color: $CardStrokeHover;
+		}
+	}
+	&__card-technology {
+		color: #fff;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 700;
+	}
+
+	&__card-level {
+		border-radius: 30px;
+		display: flex;
+		padding: 2px 10px;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		border: 1px solid;
+		&--js {
+			color: $JavaScriptColor;
+		}
+
+		&--html {
+			color: $HtmlColor;
+		}
+
+		&--css {
+			color: $CSScolor;
+		}
+
+		&--sass {
+			color: $SassColor;
+		}
+
+		&--tailwind {
+			color: $TailwindColor;
+		}
+
+		&--bootstrap {
+			color: $BootstrapColor;
+		}
+
+		&--react {
+			color: $reactColor;
+		}
+
+		&--wp {
+			color: $WordPressColor;
+		}
+
+		&--git {
+			color: $GitColor;
 		}
 	}
 }
