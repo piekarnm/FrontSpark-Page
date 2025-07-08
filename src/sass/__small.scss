@@ -10,6 +10,27 @@
 			display: none;
 		}
 	}
-	@media (min-width: 437px) {
+	@media (min-width: 520px) {
+		.hero-section {
+			&__icon {
+				width: 80px;
+				height: 80px;
+			}
+			&__subtitle {
+				span {
+					display: inline;
+				}
+			}
+			&__buttons {
+				flex-direction: row;
+			}
+			&__projects-btn {
+				font-size: 1.8rem;
+			}
+
+			&__contact-btn {
+				font-size: 1.8rem;
+			}
+		}
 	}
 }
