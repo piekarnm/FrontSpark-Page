@@ -259,10 +259,10 @@ body {
 		font-size: 1.4rem;
 		font-style: normal;
 		font-weight: 700;
-		transition: background 0.3s, box-shadow 0.3s;
+		transition: filter 0.3s, box-shadow 0.3s;
 
 		&:hover {
-			background: linear-gradient(90deg, #9b71e4 0%, #4e70ce 100%);
+			filter: saturate(0.8);
 			box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, 0.3) inset;
 		}
 	}
@@ -279,9 +279,9 @@ body {
 		font-size: 1.4rem;
 		font-style: normal;
 		font-weight: 700;
-		transition: background 0.3s, box-shadow 0.3s;
+		transition: background-color 0.3s, box-shadow 0.3s;
 		&:hover {
-			background: #ffda47;
+			background-color: #ffda47;
 			box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, 0.3) inset;
 		}
 	}
@@ -507,6 +507,11 @@ body {
 		border: 1.05px solid rgba(54, 65, 83, 0.5);
 		background: rgba(17, 24, 39, 0.5);
 		overflow: hidden;
+		transition: scale 0.3s, border-color 0.3s;
+		&:hover {
+			scale: 1.05;
+			border-color: rgba(16, 185, 129, 0.5);
+		}
 		&-img {
 			width: 100%;
 			height: auto;
