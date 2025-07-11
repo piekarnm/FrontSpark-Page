@@ -195,8 +195,6 @@ body {
 }
 
 // SECTIONS
-.section {
-}
 
 // HERO SECTION
 .hero-section {
@@ -262,7 +260,7 @@ body {
 		transition: filter 0.3s, box-shadow 0.3s;
 
 		&:hover {
-			filter: saturate(0.8);
+			filter: saturate(0.7);
 			box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, 0.3) inset;
 		}
 	}
@@ -656,6 +654,11 @@ body {
 		border-radius: 15px;
 		border: 1px solid rgba(55, 65, 81, 0.5);
 		background: rgba(17, 24, 39, 0.5);
+		transition: border-color 0.3s, scale 0.3s;
+		&:hover {
+			border-color: rgba(234, 179, 8, 0.5);
+			scale: 1.05;
+		}
 
 		&-title {
 			color: #fff;
@@ -673,6 +676,239 @@ body {
 		}
 	}
 }
+
+// CONTACT SECTION
+.section-contact {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	background: linear-gradient(90deg, rgba(76, 29, 149, 0.1) 0%, rgba(30, 58, 138, 0.1) 100%);
+	&__content {
+		display: flex;
+		padding: 50px 15px;
+		flex-direction: column;
+		align-items: center;
+		gap: 48px;
+	}
+
+	&__head {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		&-title {
+			font-size: clamp(4rem, 10vw, 4.8rem);
+			color: #fff;
+			font-style: normal;
+			font-weight: 700;
+			span {
+				color: $yellow;
+				font-style: normal;
+				font-weight: 700;
+			}
+		}
+	}
+
+	&__cards {
+		width: 100%;
+		display: flex;
+		padding: 10px;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 80px;
+		flex-wrap: wrap;
+	}
+
+	&__info-card {
+		display: flex;
+		width: 100%;
+		max-width: 351px;
+		height: 100%;
+		padding: 24px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 32px;
+		border-radius: 15px;
+		border: 1px solid $CardStrokeHover;
+		background: rgba(17, 24, 39, 0.5);
+
+		&-head {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 12px;
+
+			&-title {
+				color: #fff;
+				font-size: 24px;
+				font-style: normal;
+				font-weight: 600;
+			}
+
+			&-description {
+				color: $light-gray;
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 600;
+			}
+		}
+
+		&-linkBox {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			gap: 16px;
+			a {
+				color: $light-gray;
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 600;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 12px;
+			}
+		}
+
+		&-buttons {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			align-self: stretch;
+			flex-wrap: wrap;
+		}
+
+		&-btn {
+			display: flex;
+			padding: 8px 12px;
+			justify-content: center;
+			align-items: center;
+			gap: 8px;
+			color: #000;
+			font-size: 1.4rem;
+			font-style: normal;
+			font-weight: 600;
+			border-radius: 15px;
+			&--github {
+				background: $purple;
+				transition: background-color 0.3s, box-shadow 0.3s;
+				&:hover {
+					background-color: #d29dff;
+					box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.25) inset;
+				}
+			}
+
+			&--linkedin {
+				background: $blue;
+				transition: background-color 0.3s, box-shadow 0.3s;
+				&:hover {
+					background-color: #84bbff;
+					box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.25) inset;
+				}
+			}
+		}
+	}
+
+	&__msg-card {
+		display: flex;
+		width: 100%;
+		max-width: 450px;
+		height: 100%;
+		padding: 24px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 32px;
+		border-radius: 15px;
+		border: 1px solid rgba(81, 162, 255, 0.5);
+		background: rgba(17, 24, 39, 0.5);
+
+		&-title {
+			color: #fff;
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 600;
+		}
+
+		&-form {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 18px;
+
+			label {
+				color: $light-gray;
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 600;
+			}
+
+			input {
+				color: $light-gray;
+				width: 100%;
+				border-radius: 8px;
+				border: 1px solid rgba(153, 161, 175, 0.5);
+				background: rgba(31, 41, 55, 0.5);
+				display: flex;
+				padding: 12px 8px;
+				align-items: center;
+				gap: 10px;
+			}
+
+			textarea {
+				color: $light-gray;
+				width: 100%;
+				display: flex;
+				height: 150px;
+				max-height: 150px;
+				padding: 12px 8px;
+				align-items: flex-start;
+				gap: 10px;
+				border-radius: 8px;
+				border: 1px solid rgba(153, 161, 175, 0.5);
+				background: rgba(31, 41, 55, 0.5);
+			}
+
+			&-box {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+			}
+
+			&-btn {
+				margin-top: 14px;
+				width: 100%;
+				display: flex;
+				padding: 12px 32px;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
+				border-radius: 15px;
+				background: linear-gradient(90deg, #9810fa 0%, #2563eb 100%);
+				color: #fff;
+				font-size: 18px;
+				font-style: normal;
+				font-weight: 600;
+
+				transition: filter 0.3s, box-shadow 0.3s;
+
+				&:hover {
+					filter: saturate(0.7);
+					box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, 0.3) inset;
+				}
+			}
+		}
+	}
+}
+
+// FOOTER  
+
+
 
 @include small;
 @include medium;
