@@ -1,7 +1,7 @@
 @mixin small {
 	@media (min-width: 576px) {
 	}
-	@media (min-width: 645px) {
+	@media (min-width: 650px) {
 		.tech-section {
 			&__cards {
 				grid-template-rows: repeat(2, minmax(0, 1fr));
