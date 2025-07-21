@@ -2,8 +2,7 @@ const burgerBtn = document.querySelector('.hamburger')
 const navMobile = document.querySelector('.nav-mobile')
 const allNavItems = document.querySelectorAll('.nav-mobile__link')
 const navLogo = document.querySelector('.company')
-// const footerYear = document.querySelector('.footer-year')
-// const allSections = document.querySelectorAll('.section')
+const footerYear = document.querySelector('.footer-year')
 // const msgStatus = document.querySelector('.msg-status')
 
 // const emailInfo = () => {
@@ -48,13 +47,13 @@ const toggleNav = () => {
 }
 
 // Data footer
-// const handleCurrentYear = () => {
-// 	const year = new Date().getFullYear()
-// 	footerYear.innerText = year
-// }
+const handleCurrentYear = () => {
+	const year = new Date().getFullYear()
+	footerYear.innerText = year
+}
 
 // emailInfo()
-// handleCurrentYear()
+handleCurrentYear()
 
 // Event listener dla przycisku hamburgera
 burgerBtn.addEventListener('click', toggleNav)
