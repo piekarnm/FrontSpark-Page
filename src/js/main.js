@@ -3,27 +3,66 @@ const navMobile = document.querySelector('.nav-mobile')
 const allNavItems = document.querySelectorAll('.nav-mobile__link')
 const navLogo = document.querySelector('.company')
 const footerYear = document.querySelector('.footer-year')
-// const msgStatus = document.querySelector('.msg-status')
+const form = document.querySelector('.section-contact__msg-card-form')
+const msgStatus = document.querySelector('.msg-status')
+const policyModal = document.querySelector('#privacyPolicyModal')
+const policyModalBody = policyModal.querySelector('.pp-modal__content')
+const PolicyOpenBtn = document.querySelector('.pp-open')
+const PolicyCloseBtn = policyModal.querySelector('.pp-close')
 
-// const emailInfo = () => {
-// 	if (document.location.search === '?mail_status=sent') {
-// 		msgStatus.classList.add('success')
-// 		msgStatus.textContent = 'Wiadomość wysłana!'
+let lastFocusedElement = null
 
-// 		setTimeout(() => {
-// 			msgStatus.classList.remove('success')
-// 		}, 3000)
-// 	}
+PolicyOpenBtn.addEventListener('click', openPolicyModal)
+PolicyCloseBtn.addEventListener('click', closePolicyModal)
 
-// 	if (document.location.search === '?mail_status=error') {
-// 		msgStatus.classList.add('error')
-// 		msgStatus.textContent = 'Wystąpił błąd'
+document.addEventListener('keydown', e => {
+	if (e.key === 'Escape' && policyModal.classList.contains('active')) {
+		closePolicyModal()
+	}
+})
 
-// 		setTimeout(() => {
-// 			msgStatus.classList.remove('error')
-// 		}, 3000)
-// 	}
-// }
+function openPolicyModal() {
+	lastFocusedElement = document.activeElement
+	policyModal.classList.add('active')
+	policyModal.removeAttribute('hidden')
+	document.body.classList.add('modal-open')
+
+	policyModalBody.setAttribute('tabindex', '-1')
+	policyModalBody.focus()
+}
+
+function closePolicyModal() {
+	policyModal.classList.remove('active')
+	policyModal.setAttribute('hidden', '')
+	document.body.classList.remove('modal-open')
+
+	if (lastFocusedElement) lastFocusedElement.focus()
+}
+
+form.addEventListener('submit', async e => {
+	e.preventDefault()
+
+	msgStatus.classList.remove('success', 'error')
+	msgStatus.textContent = ''
+
+	try {
+		const res = await fetch(form.action, {
+			method: 'POST',
+			body: new FormData(form),
+		})
+
+		const data = await res.json().catch(() => ({}))
+
+		if (!res.ok || !data.ok) throw new Error(data.msg || 'Wystąpił błąd wysyłania!')
+
+		msgStatus.classList.add('success')
+		msgStatus.textContent = data.msg || 'Wiadomość została wysłana!'
+		form.reset()
+	} catch (err) {
+		msgStatus.classList.add('error')
+		msgStatus.textContent = err.message || 'Wystąpił błąd wysyłania!'
+	}
+})
 
 const openNav = () => {
 	let delayTime = 0

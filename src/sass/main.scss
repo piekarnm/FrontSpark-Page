@@ -912,6 +912,33 @@ body {
 				}
 			}
 		}
+		.section-contact__privacy {
+			align-self: center;
+			color: $light-gray;
+			font-size: 1.2rem;
+			font-weight: 500;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 4px;
+
+			.pp-open {
+				background: none;
+				border: 0;
+				padding: 0;
+				margin: 0;
+				color: $blue;
+				text-decoration: underline;
+				cursor: pointer;
+				font: inherit;
+				transition: color 0.2s, text-decoration-color 0.2s;
+
+				&:hover,
+				&:focus {
+					color: $blue;
+					text-decoration: none;
+				}
+			}
+		}
 	}
 }
 
@@ -955,6 +982,140 @@ body {
 			-webkit-text-fill-color: transparent;
 		}
 	}
+}
+
+// Status wiadomosci mail
+
+.msg-status {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 74px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 20px 20px;
+	width: auto;
+	max-width: min(90vw, 600px);
+	border-radius: 12px;
+	font-size: 2.2rem;
+	z-index: 999999;
+}
+
+.success {
+	display: flex;
+	background: $msgstatus-gradient-success;
+	border: 1px solid rgb(8, 124, 66);
+	color: rgb(125, 225, 175);
+}
+
+.error {
+	display: flex;
+	background: $msgstatus-gradient-error;
+	border: 1px solid rgb(109, 32, 32);
+	color: rgb(255, 98, 98);
+}
+
+// PRIVACY POLICY MODAL
+
+.pp-modal[hidden] {
+	display: none;
+}
+
+.pp-modal {
+	position: fixed;
+	inset: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.65);
+	backdrop-filter: blur(4px);
+	z-index: 999999;
+	opacity: 0;
+	transition: opacity 0.25s ease;
+
+	&.active {
+		display: flex;
+		opacity: 1;
+	}
+}
+
+.pp-modal__content {
+	position: relative;
+	max-width: 920px;
+	max-height: 80vh;
+	overflow: auto;
+	padding: 32px;
+	border-radius: 15px;
+	border: 1px solid rgba(153, 161, 175, 0.5);
+	background: rgba(17, 24, 39, 0.9);
+	backdrop-filter: blur(2px);
+	color: $light-gray;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+	outline: none;
+
+	h2 {
+		margin-top: 12px;
+		margin-bottom: 16px;
+		font-size: 2.4rem;
+		font-weight: 700;
+		color: #fff;
+	}
+
+	p,
+	li {
+		font-size: 1.4rem;
+		line-height: 1.6;
+		margin-bottom: 12px;
+	}
+
+	a {
+		color: $blue;
+		text-decoration: underline;
+		&:hover {
+			color: $blue;
+		}
+	}
+}
+
+.pp-close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background: none;
+	border: 0;
+	color: $light-gray;
+	font-size: 2.4rem;
+	line-height: 1;
+	cursor: pointer;
+	padding: 4px;
+	transition: color 0.2s;
+
+	&:hover,
+	&:focus {
+		color: $purple;
+	}
+}
+
+.pp-open {
+	background: none;
+	border: 0;
+	padding: 0;
+	color: $blue;
+	text-decoration: underline;
+	cursor: pointer;
+	font: inherit;
+	transition: color 0.2s;
+
+	&:hover,
+	&:focus {
+		color: $blue;
+		text-decoration: none;
+	}
+}
+
+body.modal-open {
+	overflow: hidden;
 }
 
 @include small;

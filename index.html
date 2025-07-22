@@ -14,6 +14,28 @@
     <meta name="description"
         content="FrontSpark - Twój partner w szybkim Frontend Developmencie. Nowoczesne i estetyczne portfolio w budowie. Skontaktuj się: kontakt@frontspark.pl">
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="FrontSpark">
+    <meta property="og:title" content="FrontSpark – Twój partner w szybkim Frontend Developmencie">
+    <meta property="og:description"
+        content="Nowoczesne, szybkie frontendowe projekty. Skontaktuj się: kontakt@frontspark.pl">
+    <meta property="og:url" content="https://frontspark.pl/">
+    <meta property="og:image" content="https://frontspark.pl/dist/img/og-portfolio.png">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FrontSpark – Twój partner w szybkim Frontend Developmencie">
+    <meta name="twitter:description"
+        content="Nowoczesne, szybkie frontendowe projekty. Skontaktuj się: kontakt@frontspark.pl">
+    <meta name="twitter:image" content="https://frontspark.pl/dist/img/og-portfolio.png">
+
+    <!-- Link kanoniczny  -->
+    <link rel="canonical" href="https://frontspark.pl/">
+
     <!-- Favicon -->
     <link rel="icon" href="./dist/img/bolt.svg" type="image/svg+xml">
 
@@ -23,8 +45,6 @@
     <!-- Google Font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
-        as="style" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
 
     <!-- Link do css  -->
@@ -729,22 +749,21 @@
                         <div class="section-contact__msg-card">
                             <p class="section-contact__msg-card-title">Wyślij wiadomość</p>
 
-                            <form class="section-contact__msg-card-form" method="post">
+                            <form class="section-contact__msg-card-form" action="mail.php" method="post">
                                 <div class="section-contact__msg-card-form-box">
                                     <label for="name">Imię</label>
-                                    <input aria-required="false" placeholder="Twoje Imię" name="name" id="name"
+                                    <input required autocomplete="name" placeholder="Twoje Imię" name="name" id="name"
                                         type="text">
                                 </div>
                                 <div class="section-contact__msg-card-form-box">
-                                    <label for="mail">E-mail</label>
-                                    <input required aria-required="true" placeholder="twoj@email.com" name="mail"
-                                        id="mail" type="email">
+                                    <label for="email">E-mail</label>
+                                    <input autocomplete="email" required placeholder="twoj@email.com" name="email"
+                                        id="email" type="email">
                                 </div>
 
                                 <div class="section-contact__msg-card-form-box">
                                     <label for="msg">Wiadomość</label>
-                                    <textarea required aria-required="true" placeholder="Twoja wiadomość…" name="msg"
-                                        id="msg"></textarea>
+                                    <textarea required placeholder="Twoja wiadomość…" name="msg" id="msg"></textarea>
                                 </div>
 
                                 <button type="submit" class="section-contact__msg-card-form-btn"><svg
@@ -760,8 +779,27 @@
                                             </clipPath>
                                         </defs>
                                     </svg>Wyślij wiadomość</button>
-
                             </form>
+                            <p class="section-contact__privacy">
+                                Wysyłając formularz akceptujesz
+                                <button type="button" class="pp-open" aria-haspopup="dialog"
+                                    aria-controls="privacyPolicyModal">
+                                    Politykę Prywatności
+                                </button>
+                            </p>
+                            <div id="privacyPolicyModal" class="pp-modal" role="dialog" aria-modal="true"
+                                aria-labelledby="pp-title" hidden>
+                                <div class="pp-modal__content" tabindex="-1">
+                                    <h2 id="pp-title">Polityka Prywatności</h2>
+                                    <button type="button" class="pp-close" aria-label="Zamknij">✕</button>
+
+                                    <div class="pp-body">
+                                        <!-- Treść polityki prywatności -->
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est beatae cum excepturi tempore repudiandae voluptas error ipsa commodi illo deleniti, officia enim facilis! Suscipit, id! Eligendi ipsam reiciendis modi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="msg-status" aria-live="polite"></p>
                         </div>
                     </div>
                 </div>
