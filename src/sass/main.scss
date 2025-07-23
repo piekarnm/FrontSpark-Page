@@ -1076,6 +1076,68 @@ body {
 			color: $blue;
 		}
 	}
+
+	.pp-body {
+		h3 {
+			margin-top: 34px;
+			margin-bottom: 22px;
+			font-size: 2rem;
+			font-weight: 700;
+			color: #fff;
+		}
+		span {
+			font-weight: 700;
+		}
+	}
+	.pp-body {
+		ol,
+		ul {
+			margin: 0 0 16px 2.2rem;
+			padding: 0;
+		}
+
+		> ol {
+			list-style: decimal;
+		}
+		> ul {
+			list-style: disc;
+		}
+
+		li > ol {
+			list-style: lower-alpha;
+			margin-left: 1.8rem;
+			margin-top: 6px;
+		}
+
+		li > ul {
+			list-style: circle;
+			margin-left: 1.8rem;
+			margin-top: 6px;
+		}
+
+		li::marker {
+			color: $light-gray;
+			font-weight: 700;
+		}
+
+		a:focus-visible {
+			outline: 2px dashed $light-gray;
+			outline-offset: 2px;
+		}
+	}
+
+	.pp-body h3 + ol,
+	.pp-body h3 + ul {
+		margin-top: 8px;
+	}
+
+	.pp-body > :last-child {
+		margin-bottom: 0;
+	}
+
+	.pp-body ol {
+		list-style-position: outside;
+	}
 }
 
 .pp-close {
