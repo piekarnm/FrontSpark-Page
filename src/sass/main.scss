@@ -386,7 +386,6 @@ body {
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 	&__card {
-		cursor: pointer;
 		display: flex;
 		width: 300px;
 		padding: 24px;
